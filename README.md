@@ -68,7 +68,7 @@ You can also add multiple instances. There is also the posibillity to add multip
 ```html
 <div class="js-form-toggler">
     <label for="show_target">
-        <input id="no-show" name="show_target" type="radio">
+         <input id="no-show" name="show_target" type="radio">
     </label>
 
     <label for="show_target">
@@ -80,19 +80,19 @@ You can also add multiple instances. There is also the posibillity to add multip
 #### Target element 1:
 ```html
 <div data-toggler-element="target-element-1">
-    
+    element 1
 </div>
 ```
 
 #### Triggering input element 2:
 ```html
 <div class="js-form-toggler">
-    <label for="show_target">
-        <input id="no-show" name="show_target" type="radio">
+    <label for="show_target2">
+        <input id="no-show" name="show_target2" type="radio">
     </label>
 
-    <label for="show_target">
-        <input id="show" name="show_target" type="radio" data-toggler-trigger="target-element-2">
+    <label for="show_target2">
+        <input id="show" name="show_target2" type="radio" data-toggler-trigger="target-element-2">
     </label>
 </div>
 ```
@@ -100,8 +100,8 @@ You can also add multiple instances. There is also the posibillity to add multip
 #### Target element 2 with trigger element 3 inside:
 ```html
 <div data-toggler-element="target-element-2">
-	<div class="js-form-toggler">
-    	<input type="checkbox" data-toggler-trigger="target3">
+    <div class="js-form-toggler">
+        <input type="checkbox" data-toggler-trigger="target-element-3">
     </div>
 </div>
 ```
@@ -109,9 +109,9 @@ You can also add multiple instances. There is also the posibillity to add multip
 #### Target element 3
 ```html
 <div data-toggler-element="target-element-3">
-	I will show up if my trigger is checked
+    I will show up if my trigger is checked
 </div>
 <div data-toggler-element="target-element-3" data-toggler-default="visible">
-	And I will hide when the same trigger is checked
+    And I will hide when the same trigger is checked
 </div>
 ```
