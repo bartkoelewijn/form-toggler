@@ -6,11 +6,11 @@ $(function() {
         });
         if (item.attr('data-toggler-default') != 'visible') item.hide();
     });
-	$('.js-form-toggler').each(function(index, item) {
-		item = $(item);
-		if (!item.data('FormToggler')) {
-			item.data('FormToggler', new FormToggler(item));
-		}
+    $('.js-form-toggler').each(function(index, item) {
+        item = $(item);
+        if (!item.data('FormToggler')) {
+            item.data('FormToggler', new FormToggler(item));
+        }
     });
 });
 
@@ -24,22 +24,25 @@ class FormToggler {
 
     toggle() {
         this.target =  $(`[data-toggler-element=${this.trigger.attr('data-toggler-trigger')}]`);
-        let show = false;
 
-        if(this.trigger.is(':checked') && this.target.attr('data-toggler-default') != 'visible') {
-            show = true;
-        }
+        $.each(this.target, (index, item)=> {
+            item = $(item);
+            let show = false;
+            if(this.trigger.is(':checked') && item.attr('data-toggler-default') != 'visible') {
+                show = true;
+            }
 
-        if(!this.trigger.is(':checked') &&  this.target.attr('data-toggler-default') == 'visible') {
-            show = true;
-        }
+            if(!this.trigger.is(':checked') &&  item.attr('data-toggler-default') == 'visible') {
+                show = true;
+            }
 
-        if(show) {
-            this.target.show();
-        } else {
-            this.target.hide();
-        }
-        
+            if(show) {
+                item.show();
+            } else {
+                item.hide();
+            }
+        });
+
         this.target.find('input').prop('checked', false).change();
         this.handleRequired();
     }
