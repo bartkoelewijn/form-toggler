@@ -1,9 +1,7 @@
 $(function() {
     $('[data-toggler-element]').each(function(index, item) {
         item = $(item);
-        $.each(item.find('[required]'), (index, requiredItem)=> {
-            $(requiredItem).attr('data-required', 'required');
-        });
+        item.find('[required]').attr('data-required', 'required');
         if (item.attr('data-toggler-default') != 'visible') item.hide();
     });
     $('.js-form-toggler').each(function(index, item) {
@@ -18,29 +16,18 @@ class FormToggler {
     constructor(element) {
         this.element = element;
         this.trigger = this.element.find('[data-toggler-trigger]');
+        this.target =  $(`[data-toggler-element=${this.trigger.attr('data-toggler-trigger')}]`);
         this.element.on('change', this.toggle.bind(this));
         this.toggle();
     }
 
     toggle() {
-        this.target =  $(`[data-toggler-element=${this.trigger.attr('data-toggler-trigger')}]`);
 
         $.each(this.target, (index, item)=> {
             item = $(item);
-            let show = false;
-            if(this.trigger.is(':checked') && item.attr('data-toggler-default') != 'visible') {
-                show = true;
-            }
-
-            if(!this.trigger.is(':checked') &&  item.attr('data-toggler-default') == 'visible') {
-                show = true;
-            }
-
-            if(show) {
-                item.show();
-            } else {
-                item.hide();
-            }
+            let checked = this.trigger.is(':checked');
+            let visible = item.attr('data-toggler-default') == 'visible';
+            item.toggle((checked && !visible) || (!checked && visible))
         });
 
         this.target.find('input').prop('checked', false).change();
@@ -50,11 +37,7 @@ class FormToggler {
     handleRequired() {
         $.each(this.target.find('[data-required]'), (index, item)=> {
             item = $(item);
-            if(item.is(':visible')) {
-                item.attr('required', 'required');
-            } else {
-                item.attr('required', false);
-            }
+            item.attr('required', item.is(':visible') ? 'required' : false);
         });
     }
 }
