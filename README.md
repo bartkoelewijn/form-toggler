@@ -10,7 +10,7 @@
 Clone or download the formToggler.js and add it in the same folder as your main JS file.
 
 Add the following line to your main JS file:
-```
+```javascript
 require('./formToggler');
 ```
 
@@ -19,7 +19,7 @@ require('./formToggler');
 
 ### Shows the target when the ```data-toggle-trigger``` element is checked 
 #### Triggering input element:
-```
+```html
 <div class="js-form-toggler">
     <label for="show_target">
         <input id="no-show" name="show_target" type="radio">
@@ -32,7 +32,7 @@ require('./formToggler');
 ```
 
 #### Target element:
-```
+```html
 <div data-toggler-element="target-element">
     
 </div>
@@ -41,7 +41,7 @@ require('./formToggler');
 ### Hides the target when the ```data-toggle-trigger``` element is checked 
 
 #### Triggering input element:
-```
+```html
 <div class="js-form-toggler">
     <label for="show_target">
         <input id="no-show" name="show_target" type="radio">
@@ -54,7 +54,7 @@ require('./formToggler');
 ```
 
 #### Target element:
-```
+```html
 <div data-toggler-element="target-element" data-toggler-default="visible">
     
 </div>
@@ -65,7 +65,7 @@ The ```data-toggler-default="visible"``` makes the element visible on page load.
 You can also add multiple instances. There is also the posibillity to add multiple targets with 1 trigger.
 
 #### Triggering input element 1:
-```
+```html
 <div class="js-form-toggler">
     <label for="show_target">
         <input id="no-show" name="show_target" type="radio">
@@ -78,14 +78,14 @@ You can also add multiple instances. There is also the posibillity to add multip
 ```
 
 #### Target element 1:
-```
+```html
 <div data-toggler-element="target-element-1">
     
 </div>
 ```
 
 #### Triggering input element 2:
-```
+```html
 <div class="js-form-toggler">
     <label for="show_target">
         <input id="no-show" name="show_target" type="radio">
@@ -98,7 +98,7 @@ You can also add multiple instances. There is also the posibillity to add multip
 ```
 
 #### Target element 2 with trigger element 3 inside:
-```
+```html
 <div data-toggler-element="target-element-2">
 	<div class="js-form-toggler">
     	<input type="checkbox" data-toggler-trigger="target3">
@@ -107,7 +107,7 @@ You can also add multiple instances. There is also the posibillity to add multip
 ```
 
 #### Target element 3
-```
+```html
 <div data-toggler-element="target-element-3">
 	I will show up if my trigger is checked
 </div>
