@@ -19,7 +19,7 @@ require('./formToggler');
 ### Examples: 
 
 #### Shows the target when the ```data-toggle-trigger``` element is checked 
-Triggering input element:
+#####Triggering input element:
 ```
 <div class="js-form-toggler">
     <label for="show_target">
@@ -32,7 +32,7 @@ Triggering input element:
 </div>
 ```
 
-Target element:
+#####Target element:
 ```
 <div data-toggler-element="target-element">
     
@@ -41,7 +41,7 @@ Target element:
 
 #### Hides the target when the ```data-toggle-trigger``` element is checked 
 
-Triggering input element:
+#####Triggering input element:
 ```
 <div class="js-form-toggler">
     <label for="show_target">
@@ -54,7 +54,7 @@ Triggering input element:
 </div>
 ```
 
-Target element:
+#####Target element:
 ```
 <div data-toggler-element="target-element" data-toggler-default="visible">
     
@@ -65,7 +65,7 @@ The ```data-toggler-default="visible"``` makes the element visible on page load.
 #### Multiple
 You can also add multiple instances. There is also the posibillity to add multiple targets with 1 trigger.
 
-Triggering input element 1:
+#####Triggering input element 1:
 ```
 <div class="js-form-toggler">
     <label for="show_target">
@@ -78,14 +78,14 @@ Triggering input element 1:
 </div>
 ```
 
-Target element 1:
+#####Target element 1:
 ```
 <div data-toggler-element="target-element-1">
     
 </div>
 ```
 
-Triggering input element 2:
+#####Triggering input element 2:
 ```
 <div class="js-form-toggler">
     <label for="show_target">
@@ -98,7 +98,7 @@ Triggering input element 2:
 </div>
 ```
 
-Target element 2 with trigger element 3 inside:
+#####Target element 2 with trigger element 3 inside:
 ```
 <div data-toggler-element="target-element-2">
 	<div class="js-form-toggler">
@@ -107,7 +107,7 @@ Target element 2 with trigger element 3 inside:
 </div>
 ```
 
-Target element 3
+#####Target element 3
 ```
 <div data-toggler-element="target-element-3">
 	I will show up if my trigger is checked
