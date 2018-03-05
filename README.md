@@ -11,7 +11,7 @@ Clone or download the formToggler.js and add it in the same folder as your main 
 
 Add the following line to your main JS file:
 ```
-	require('./formToggler');
+require('./formToggler');
 ```
 
 ## Usage
